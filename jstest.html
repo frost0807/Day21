@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script defer type="text/javascript" src="test.js?ver=1"></script>
+    <style>
+        button {height:40px;font-size:20px;border:none;background-color: darkcyan;color:white;border-radius: 15px;}
+        input {height:20px;font-size:16px;border:none;margin:5px 0 5px 0;}
+    </style>
+</head>
+<body>
+    <button type="button" onclick="document.getElementById('display').innerHTML=myCar.accel(),
+    document.getElementById('display').innerHTML='현재속도는 '+myCar.speed+'입니다.'">액셀!</button>
+    <button type="button" onclick="document.getElementById('display').innerHTML=myCar.brake(),
+    document.getElementById('display').innerHTML='현재속도는 '+myCar.speed+'입니다.'">브레이크!</button>
+    <p id='display'></p>
+    <p id='model'></p>
+    <p id='color'></p>
+    
+    <button type="button" onclick="myCar.put_info()">put_info</button>
+    <button type="button" onclick="document.getElementById('info').innerHTML=myCar.get_info()">get_info</button>
+    <p id="info"></p>
+    
+    <form>
+        <input type="text" id="model_change" placeholder="변경할 모델"><br>
+        <input type="text" id="speed_change" placeholder="변경할 속도"><br>
+        <input type="text" id="color_change" placeholder="변경할 색"><br><br>
+        <button type="button" onclick="myCar.model=document.getElementById('model_change').value,
+        myCar.speed=document.getElementById('speed_change').value,
+        myCar.color=document.getElementById('color_change').value">변경하기!</button>
+    </form>
+</body>
+</html>

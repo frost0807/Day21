@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer type="text/javascript" src="mobile_phone.js"></script>
+    <style>
+        input{height:30px;border:none;margin:5px 0 5px 0;}
+        button{height:30px;width:70px;font-size:15px;border:none;background-color: chocolate;color:white;border-radius:10px;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="p_model" placeholder="모델 입력"><br>
+        <input type="text" id="p_net" placeholder="통신방식 입력"><br>
+        <input type="text" id="p_price" placeholder="가격 입력"><br>
+        <button type="button" onclick="phone.set_phone(
+            document.getElementById('p_model').value,
+            document.getElementById('p_net').value,
+            document.getElementById('p_price').value)">입력</button>
+        <button type="button" onclick="document.getElementById('info').innerHTML=phone.model+'<br>'+phone.network+'<br>'+phone.price">출력</button>
+        <p id="info"></p>
+    </form>
+</body>
+</html>
